@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hwHandelbars</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="handlebars-v4.0.10.js"></script>
+</head>
+<body>
+<form onsubmit="return false;">
+    <span>My contact list</span>
+    <select class="choice" id="select">
+        <option class="empty" value="empty">Unordered list</option>
+        <option class="firstName" value="firstName">First Name</option>
+        <option class="lastName" value="lastName">Last Name</option>
+    </select>
+    <button type="reset" class="reset" value="reset">Reset</button>
+    <input type="text" id="search" placeholder="Search"/>
+</form>
+<br/>
+<table class="item well">
+    <tbody id="container">
+    <tr class="firstStrTab">
+        <td class="fixed">First Name</td>
+        <td class="fixed">Last Name</td>
+        <td>del</td>
+    </tr>
+    <script id="template" type="text/x-handlebars-template">
+
+        {{#each newUsers}}
+        <tr class="stringTable">
+            <td>{{firstName}}</td>
+            <td>{{lastName}}</td>
+            <td class="del"><button class="deleteString" value="x">x</button></td>
+        </tr>
+        {{/each}}
+
+    </script>
+    </tbody>
+</table>
+<script src="main.js"></script>
+</body>
+</html>
